@@ -9,7 +9,7 @@ pipeline {
         }
         stage('run') {
             steps {
-              sh "docker run -rm ola-unicamp"
+              sh "docker run --rm ola-unicamp"
             }
         }
     }
