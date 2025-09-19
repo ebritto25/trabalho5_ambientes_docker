@@ -2,19 +2,14 @@ pipeline {
     agent any
 
      stages {
-        stage('check_env') {
-            steps {
-                sh "echo $DOCKER_CERT_PATH"
-            }
-        }
         stage('build') {
             steps {
-              sh "docker build -t Ola_Unicamp ."
+              sh "docker build -t ola-unicamp ."
             }
         }
         stage('run') {
             steps {
-              sh "docker run Ola_Unicamp"
+              sh "docker run -rm ola-unicamp"
             }
         }
     }
